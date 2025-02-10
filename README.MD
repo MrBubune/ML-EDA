@@ -4,17 +4,17 @@
 ## **Task 1: Data Quality Assessment**
 
 ### **Are there any duplicate rows? If yes, why might duplicates exist in this dataset?**
-There are no duplicate rows in the dataset. However, if there were, it would be as a reult of:
+There are no duplicate rows in the dataset. However, if there were, it would be as a result of:
 1. Data entry errors.
 2. Data merging issues.
 3. Repeated transactions or logs.
 
 ### **Are there inconsistencies in categorical values (e.g., spelling variations, case sensitivity)?**
-There are no incosistencies in the categorical values.
+There are no inconsistencies in the categorical values.
 
 ### **What should we do if a column has too many missing values?**
 1. If a column has too many missing values (e.g., > 50-60%), consider dropping it.
-2. If the information within is valuable, we can replace by filling it (mean/median for numerical, mode for categorical, ffil or bfill).
+2. If the information within is valuable, we can replace by filling it (mean/median for numerical, mode for categorical, ffill or bfill).
 
 ### **Are there outliers in numerical columns? If so, should we remove or adjust them?**
 There are no numerical outliers. But if they existed, we would do the following:
@@ -118,24 +118,20 @@ Smaller-town users prefer all the apps, highlighting their regional app preferen
 |High_Paying_User	|Binary: 1 if using a paid subscription, 0 otherwise                            |
 
 
-## **Task 7: Collaborative Review & Documentation**
+## **Task 8: The Final Challenge**
 
-### **What Were the Most Surprising Insights from This Dataset?**  
-- Many users engage with multiple dating apps, suggesting a lack of loyalty to a single platform.  
-- Urban users tend to have higher daily usage time compared to rural users.  
-- Older Gen-Z users (22–25) are more likely to use serious relationship apps, while younger users (18–21) prefer casual connections.  
+### **1. If a dating app wanted to expand into rural India, which insights from this dataset would be most valuable?**
+- Rural users have lower engagement, suggesting a need for features that boost interaction.
+- Relationship-focused features would align better with rural users’ interests.
+- The app should be lightweight and optimized for low-connectivity areas.
 
-### **What Would You Do Differently If Given More Time?**   
-- Create more behavioral features (e.g., time spent per session, match success rate).  
-- Use NLP techniques to analyze "Reason for Using" responses for sentiment.   
-- Better handling of missing values using imputation.  
-- Identify and remove potential duplicates.    
-- Apply clustering techniques to segment users.  
-- Conduct time-series analysis on app engagement trends.  
+### **2. If you were designing a new dating app based on this data, what two features would you add?**
+1. Offline matchmaking mode to allow usage with limited internet access.
+2. Community-based verification to increase trust and credibility.
 
+### **3. What were the biggest data cleaning challenges in this dataset?**
+- Handling missing values.
+- Standardizing categorical values.
+- Detecting and handling outliers.
+- Encoding categorical variables for ML models.
 
-### **How Can We Improve Dataset Documentation for Others?**  
-- Clearly define each column’s meaning, data type, and possible values.  
-- Version Control  
-- Document transformations applied (e.g., encoding, normalization) so others can understand the preprocessing.  
-- Use correlation heatmaps, histograms, and boxplots in the README file for a quick dataset overview.  
