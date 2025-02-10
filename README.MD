@@ -77,13 +77,42 @@ We would have to identify underrepresented groups (e.g., rural users, non-binary
 ### **Can we trust this dataset for making general claims about Gen-Z dating in India?**
 Compare dataset proportions to India's Gen-Z demographics (external validation would be needed)
 
-## 5: Temporal & Regional Trends
 
-### Are younger or older Gen-Z users more active on dating apps?
+## **Task 5: Temporal & Regional Trends**
+
+### **Are younger or older Gen-Z users more active on dating apps?**
 Younger users have higher median usage frequency, they are more active.
 
-### Does dating app preference change over time?
+### **Does dating app preference change over time?**
 If some apps are gaining popularity over time, it indicates shifting user preferences. If they are declining, they may be losing relevance.
 
-### Do metro city users behave differently from users in smaller towns?
+### **Do metro city users behave differently from users in smaller towns?**
 Smaller-town users prefer all the apps, highlighting their regional app preferences
+
+
+## **Task 6: Feature Engineering for Future Modeling**
+
+### **How can we convert categorical variables into numbers for ML models?**
+1. One-Hot Encoding (OHE) → For unordered categories (e.g., Gender, Primary_App)
+2. Label Encoding → For ordered categories (e.g., Satisfaction Levels: Low, Medium, High)
+3. Ordinal Encoding → If there's a meaningful order (e.g., Subscription Plan: Free < Silver < Gold)
+
+### **Should we normalize numerical data? Why or why not?**
+*When to Normalize?*<br>
+* If numerical features have different scales, normalization improves model performance (especially for distance-based models like KNN & SVM).
+* If values range widely (e.g., Age: 18-25 vs. App Usage Hours: 0-1000), it prevents some features from dominating others.
+
+*When to Skip Normalization?*<br>
+* If using tree-based models (Random Forest, Decision Trees, XGBoost)
+* If all numerical values are already in the same range.
+
+### **What new features could we create to enhance predictive modeling?**
+|Feature Name	    |Description                                                                    |
+|-------------------|-------------------------------------------------------------------------------|
+|Age_Group	        |Categorize users into age brackets (e.g., 18-21, 22-25)                        |
+|Active_Hours	    |Convert usage frequency into a numerical scale (e.g., Daily = 7, Weekly = 1)   |
+|Engagement_Score	|Based on time spent per session × sessions per week                            |
+|Urban_vs_Rural	    |Binary feature: 1 = Metro, 0 = Small town                                      |
+|Loyalty_Score	    |How long a user has been on a specific app (if data is available)              |
+|Diversity_of_Apps	|Number of dating apps used (Primary + Secondary Apps)                          |
+|High_Paying_User	|Binary: 1 if using a paid subscription, 0 otherwise                            |
