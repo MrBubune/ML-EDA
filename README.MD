@@ -22,6 +22,7 @@ There are no numerical outliers. But if they existed, we would do the following:
 2. If they are extreme but valid, use transformations to normalize them.
 3. If they are critical, keep them but analyze their impact on the model.
 
+
 ## **Task 2: Dataset Documentation & Collaboration**
 
 ### **If you were a new data scientist joining this project, what would you need to understand this dataset?**
@@ -46,3 +47,18 @@ There are no numerical outliers. But if they existed, we would do the following:
 * Use a DVC (Data Version Control) similar to Git but optimized for large datasets.
 * Use frameworks like Delta Lake for versioned data tracking, especially for big data.
 * Maintain a structured changelog.md file documenting updates, fixes, and schema changes.
+
+
+## **Task 2: Dataset Documentation & Collaboration**
+
+### Does gender influence dating app preferences?
+From the Chi-Square test, it has a weak relation (p is 0.1833, which is >0.05, indicating a weak relationship).
+
+### Are people using multiple dating apps simultaneously?
+Yes, multiple app engagement is common
+
+### Which age group is most active on dating apps?
+The most active age group is 18 year olds, 23 year olds and 24 year olds.
+
+### Do people in urban vs. rural areas show different usage patterns?
+Urban users (Mumbai and Dehli specifically) use dating apps far more than rural users.
