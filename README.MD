@@ -49,7 +49,7 @@ There are no numerical outliers. But if they existed, we would do the following:
 * Maintain a structured changelog.md file documenting updates, fixes, and schema changes.
 
 
-## **Task 2: Dataset Documentation & Collaboration**
+## **Task 3: Relationship Analysis**
 
 ### Does gender influence dating app preferences?
 From the Chi-Square test, it has a weak relation (p is 0.1833, which is >0.05, indicating a weak relationship).
@@ -62,3 +62,17 @@ The most active age group is 18 year olds, 23 year olds and 24 year olds.
 
 ### Do people in urban vs. rural areas show different usage patterns?
 Urban users (Mumbai and Dehli specifically) use dating apps far more than rural users.
+
+
+## **Task 4: Detecting Patterns & Bias in Data**
+
+### **Is there gender bias in dating app usage?**
+Gender Distribution is 35.2% females, 34.2% males and 30.6% non-binary, indicating a very weak bias.
+### **Are certain demographics overrepresented in the dataset?**
+We would have to compare the dataset’s age, education, and location distribution with real-world Gen-Z demographics in India.
+
+### **Is there a missing group of users that should have been included?**
+We would have to identify underrepresented groups (e.g., rural users, non-binary users, certain age groups).
+
+### **Can we trust this dataset for making general claims about Gen-Z dating in India?**
+Compare dataset proportions to India's Gen-Z demographics (external validation would be needed)
