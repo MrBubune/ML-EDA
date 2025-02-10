@@ -4,23 +4,24 @@
 ## **Task 1: Data Quality Assessment**
 
 ### **Are there any duplicate rows? If yes, why might duplicates exist in this dataset?**
-There are no duplicate rows in the dataset. However, if there were, it would be as a reult of:
+There are no duplicate rows in the dataset. However, if there were, it would be as a result of:
 1. Data entry errors.
 2. Data merging issues.
 3. Repeated transactions or logs.
 
 ### **Are there inconsistencies in categorical values (e.g., spelling variations, case sensitivity)?**
-There are no incosistencies in the categorical values.
+There are no inconsistencies in the categorical values.
 
 ### **What should we do if a column has too many missing values?**
 1. If a column has too many missing values (e.g., > 50-60%), consider dropping it.
-2. If the information within is valuable, we can replace by filling it (mean/median for numerical, mode for categorical, ffil or bfill).
+2. If the information within is valuable, we can replace by filling it (mean/median for numerical, mode for categorical, ffill or bfill).
 
 ### **Are there outliers in numerical columns? If so, should we remove or adjust them?**
 There are no numerical outliers. But if they existed, we would do the following:
 1. Remove them, if the outliers are due to errors.
 2. If they are extreme but valid, use transformations to normalize them.
 3. If they are critical, keep them but analyze their impact on the model.
+
 
 ## **Task 2: Dataset Documentation & Collaboration**
 
@@ -46,3 +47,91 @@ There are no numerical outliers. But if they existed, we would do the following:
 * Use a DVC (Data Version Control) similar to Git but optimized for large datasets.
 * Use frameworks like Delta Lake for versioned data tracking, especially for big data.
 * Maintain a structured changelog.md file documenting updates, fixes, and schema changes.
+
+
+## **Task 3: Relationship Analysis**
+
+### Does gender influence dating app preferences?
+From the Chi-Square test, it has a weak relation (p is 0.1833, which is >0.05, indicating a weak relationship).
+
+### Are people using multiple dating apps simultaneously?
+Yes, multiple app engagement is common
+
+### Which age group is most active on dating apps?
+The most active age group is 18 year olds, 23 year olds and 24 year olds.
+
+### Do people in urban vs. rural areas show different usage patterns?
+Urban users (Mumbai and Dehli specifically) use dating apps far more than rural users.
+
+
+## **Task 4: Detecting Patterns & Bias in Data**
+
+### **Is there gender bias in dating app usage?**
+Gender Distribution is 35.2% females, 34.2% males and 30.6% non-binary, indicating a very weak bias.
+### **Are certain demographics overrepresented in the dataset?**
+We would have to compare the dataset’s age, education, and location distribution with real-world Gen-Z demographics in India.
+
+### **Is there a missing group of users that should have been included?**
+We would have to identify underrepresented groups (e.g., rural users, non-binary users, certain age groups).
+
+### **Can we trust this dataset for making general claims about Gen-Z dating in India?**
+Compare dataset proportions to India's Gen-Z demographics (external validation would be needed)
+
+
+## **Task 5: Temporal & Regional Trends**
+
+### **Are younger or older Gen-Z users more active on dating apps?**
+Younger users have higher median usage frequency, they are more active.
+
+### **Does dating app preference change over time?**
+If some apps are gaining popularity over time, it indicates shifting user preferences. If they are declining, they may be losing relevance.
+
+### **Do metro city users behave differently from users in smaller towns?**
+Smaller-town users prefer all the apps, highlighting their regional app preferences
+
+
+## **Task 6: Feature Engineering for Future Modeling**
+
+### **How can we convert categorical variables into numbers for ML models?**
+1. One-Hot Encoding (OHE) → For unordered categories (e.g., Gender, Primary_App)
+2. Label Encoding → For ordered categories (e.g., Satisfaction Levels: Low, Medium, High)
+3. Ordinal Encoding → If there's a meaningful order (e.g., Subscription Plan: Free < Silver < Gold)
+
+### **Should we normalize numerical data? Why or why not?**
+*When to Normalize?*<br>
+* If numerical features have different scales, normalization improves model performance (especially for distance-based models like KNN & SVM).
+* If values range widely (e.g., Age: 18-25 vs. App Usage Hours: 0-1000), it prevents some features from dominating others.
+
+*When to Skip Normalization?*<br>
+* If using tree-based models (Random Forest, Decision Trees, XGBoost)
+* If all numerical values are already in the same range.
+
+### **What new features could we create to enhance predictive modeling?**
+|Feature Name	    |Description                                                                    |
+|-------------------|-------------------------------------------------------------------------------|
+|Age_Group	        |Categorize users into age brackets (e.g., 18-21, 22-25)                        |
+|Active_Hours	    |Convert usage frequency into a numerical scale (e.g., Daily = 7, Weekly = 1)   |
+|Engagement_Score	|Based on time spent per session × sessions per week                            |
+|Urban_vs_Rural	    |Binary feature: 1 = Metro, 0 = Small town                                      |
+|Loyalty_Score	    |How long a user has been on a specific app (if data is available)              |
+|Diversity_of_Apps	|Number of dating apps used (Primary + Secondary Apps)                          |
+|High_Paying_User	|Binary: 1 if using a paid subscription, 0 otherwise                            |
+
+
+## **Task 8: The Final Challenge**
+
+### **1. If a dating app wanted to expand into rural India, which insights from this dataset would be most valuable?**
+- Rural users have lower engagement, suggesting a need for features that boost interaction.
+- Relationship-focused features would align better with rural users’ interests.
+- The app should be lightweight and optimized for low-connectivity areas.
+
+### **2. If you were designing a new dating app based on this data, what two features would you add?**
+1. Offline matchmaking mode to allow usage with limited internet access.
+2. Community-based verification to increase trust and credibility.
+
+### **3. What were the biggest data cleaning challenges in this dataset?**
+- Handling missing values.
+- Standardizing categorical values.
+- Detecting and handling outliers.
+- Encoding categorical variables for ML models.
+
