@@ -116,3 +116,26 @@ Smaller-town users prefer all the apps, highlighting their regional app preferen
 |Loyalty_Score	    |How long a user has been on a specific app (if data is available)              |
 |Diversity_of_Apps	|Number of dating apps used (Primary + Secondary Apps)                          |
 |High_Paying_User	|Binary: 1 if using a paid subscription, 0 otherwise                            |
+
+
+## **Task 7: Collaborative Review & Documentation**
+
+### **What Were the Most Surprising Insights from This Dataset?**  
+- Many users engage with multiple dating apps, suggesting a lack of loyalty to a single platform.  
+- Urban users tend to have higher daily usage time compared to rural users.  
+- Older Gen-Z users (22–25) are more likely to use serious relationship apps, while younger users (18–21) prefer casual connections.  
+
+### **What Would You Do Differently If Given More Time?**   
+- Create more behavioral features (e.g., time spent per session, match success rate).  
+- Use NLP techniques to analyze "Reason for Using" responses for sentiment.   
+- Better handling of missing values using imputation.  
+- Identify and remove potential duplicates.    
+- Apply clustering techniques to segment users.  
+- Conduct time-series analysis on app engagement trends.  
+
+
+### **How Can We Improve Dataset Documentation for Others?**  
+- Clearly define each column’s meaning, data type, and possible values.  
+- Version Control  
+- Document transformations applied (e.g., encoding, normalization) so others can understand the preprocessing.  
+- Use correlation heatmaps, histograms, and boxplots in the README file for a quick dataset overview.  
