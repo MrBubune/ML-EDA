@@ -1,4 +1,4 @@
-# Data Dictionary for GenZ Dating App Dataset
+# GenZ Dating App Dataset
 
 ## Overview
 This dataset contains information about Gen Z users' dating app preferences, behaviors, and satisfaction levels. It includes demographic details, app usage patterns, and desired features.
@@ -24,7 +24,27 @@ This dataset contains information about Gen Z users' dating app preferences, beh
 | `Preferred_Communication`| String    | Preferred mode of communication with matches (e.g., "Text", "Voice notes"). |
 | `Partner_Priorities`     | String    | Factors users prioritize when choosing a partner (e.g., "Values > Personality > Appearance"). |
 
+## Data Cleaning Steps Taken
+
+1. **Handled Missing Values:**
+   - Dropped columns with more than 60% missing values.
+   - Filled missing numerical values with the median.
+   - Filled missing categorical values with the most common (mode).
+
+2. **Removed Duplicates:**
+   - Identified and dropped duplicate rows to ensure data integrity.
+
+3. **Standardized Categorical Values:**
+   - Converted text to lowercase and stripped whitespace to maintain consistency.
+
+4. **Handled Outliers:**
+   - Used the Interquartile Range (IQR) method to detect and remove extreme values from numerical columns.
+
+5. **Saved Cleaned Dataset:**
+   - Exported the processed dataset as `cleaned_GenZ_DatingApp_Data_v1.csv` for further analysis.
+
 ## Notes
 - **Categorical variables** like `Gender`, `Primary_App`, and `Challenges` may have variations and should be standardized for analysis.
 - **Satisfaction** is measured on a **1-5 scale**, with 5 being the highest rating.
 - **Usage Frequency** and **Daily Usage Time** provide insights into user engagement levels.
+
