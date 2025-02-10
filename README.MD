@@ -76,3 +76,14 @@ We would have to identify underrepresented groups (e.g., rural users, non-binary
 
 ### **Can we trust this dataset for making general claims about Gen-Z dating in India?**
 Compare dataset proportions to India's Gen-Z demographics (external validation would be needed)
+
+## 5: Temporal & Regional Trends
+
+### Are younger or older Gen-Z users more active on dating apps?
+Younger users have higher median usage frequency, they are more active.
+
+### Does dating app preference change over time?
+If some apps are gaining popularity over time, it indicates shifting user preferences. If they are declining, they may be losing relevance.
+
+### Do metro city users behave differently from users in smaller towns?
+Smaller-town users prefer all the apps, highlighting their regional app preferences
